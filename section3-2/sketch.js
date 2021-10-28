@@ -1,3 +1,4 @@
+/*
 // テキスト「アニメーションの基本」
 let x, y, vx, vy;
 const g = 1; // 重力加速度
@@ -35,4 +36,31 @@ function draw(){
 
 function windowResized(){
   resizeCanvas(windowWidth, windowHeight);
+}
+*/
+
+//左右キーで左右に移動、スペースキーでジャンプ
+
+let x, y;
+
+function setup(){
+
+ createCanvas(windowWidth, windowHeight);
+  x = width/2;
+  y = height/2;
+}
+
+function draw(){
+ background(160, 192, 255);
+ ellipse(x, y, 30);
+}
+
+function keyPressed(){
+ if(keyCode == LEFT_ARROW){x -= 20;}
+ else if(keyCode == RIGHT_ARROW){x += 20;}
+ else if(key == " "){y -= 100;}
+}
+
+function keyReleased(){
+ if(key == " "){y += 100;}
 }
