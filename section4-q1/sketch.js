@@ -21,9 +21,9 @@ function setup(){
   for(let i = 0; i < scores.length; i++){
     // BLANK[1]
     const h = height - height * scores[i] / 100;
-    ellipse(i * dx, h, 5);
-    px = (i-1) * dx;
+    ellipse((i + 0.5) * dx, h, 5);
+    px = (i - 0.5) * dx;
     py = height - height * scores[i-1] / 100
-    line(px, py, i * dx, h);
+    line(px, py, (i + 0.5) * dx, h);
   }
 }
